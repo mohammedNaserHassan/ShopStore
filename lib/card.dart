@@ -1,15 +1,34 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-StatefulWidget shoppingcard( String product_name, String price, String img){
- Color color = Colors.black;
-  return Material(
-    child: Container(
-      color: Colors.white
-      ,child: InkWell(
+class shoppingcard extends StatefulWidget {
+
+  String product_name,price,img;
+
+  @override
+  _shoppingcardState createState() => _shoppingcardState(product_name,price,img);
+
+  shoppingcard(this.product_name, this.price, this.img);
+}
+
+class _shoppingcardState extends State<shoppingcard> {
+  bool isFavorited = false;
+  bool isCard = false;
+  Color color = Colors.black;
+  String product_name,price,img;
+  void toggleFavorite() {
+    setState((){
+      isFavorited = !isFavorited;
+    });
+  }
+  @override
+  Widget build(BuildContext context) {
+    return   Material(
+      child: Container(
+        color: Colors.white
+        ,child: InkWell(
         onTap: (){},
 
-        child: Padding(
-          padding: const EdgeInsets.all(0.0),
+        child: Card(
           child: Container(
             decoration: BoxDecoration(
                 color: Colors.white,
@@ -23,33 +42,43 @@ StatefulWidget shoppingcard( String product_name, String price, String img){
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  height: 100,
+                  height: 80.0,
                   width: double.infinity,
                   child: Image(
                     image: AssetImage(img),
                   ),
                 ),
 
-                SizedBox(height: 8.0,),
-                Text(product_name,style: TextStyle(fontWeight: FontWeight.w700,fontSize: 20.0),),
-                SizedBox(height: 8.0,),
+                SizedBox(height: 5.0,),
+                Center(child: Text(product_name,style: TextStyle(fontWeight: FontWeight.w700,fontSize: 20.0),)),
+                SizedBox(height: 5.0,),
                 Text(price,style: TextStyle(color: Colors.orange, fontWeight: FontWeight.w700,fontSize: 20.0),)
                 ,
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    IconButton(icon: Icon(Icons.favorite_border,color: color,),onPressed: (){
-                    setState(){
-                      color = Colors.red;
-                    }
-                    }),
-                    IconButton(icon: Icon(Icons.add_shopping_cart), onPressed: (){},),
+                   IconButton(icon:  isFavorited ? Icon(Icons.favorite,color: Colors.red,) : Icon(Icons.favorite_border),
+                       onPressed: toggleFavorite
+                   )
+                    ,
+                    IconButton(icon:  isCard ? Icon(Icons.add_shopping_cart,color: Colors.yellow,):Icon(Icons.add_shopping_cart),
+                      onPressed: (){
+                      setState(() {
+                        isCard = !isCard;
+                      });
+                      },),
                   ],)
               ],
             ),
           ),
         ),
+
       ),
-    ),
-  );
+      ),
+    );
+  }
+
+  _shoppingcardState(this.product_name, this.price, this.img);
 }
+
+

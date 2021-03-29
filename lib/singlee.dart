@@ -20,7 +20,7 @@ Widget mainwidget(){
               height: 10.0,
             ),
             promocard(Colors.blueGrey, "Discover the Nike Collection", "20%",
-                "https://www.muhtwa.com/wp-content/uploads/Kidswear-Dolce-Gabbana-Fall-Winter-2013-2014-Lookbook-6.jpg")
+                "images/fg.jpg")
             ,
             createlist("Jackets and coats","images/a1.jpg","images/a2.jpg","images/a3.jpg","images/a4.jpg","images/a5.jpg"),
             SizedBox(height: 8,),

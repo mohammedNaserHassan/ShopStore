@@ -67,30 +67,30 @@ Widget profiletap(){
         Container(
           child:  ListTile(title: Text("Edit personal information", style: TextStyle(color: Colors.white70
           ),),leading: Icon(Icons.edit),trailing: Icon(Icons.arrow_forward_ios)),
-          color: Colors.amber,
+
         ),
         Container(
           child:  ListTile(title: Text("Login"),leading: Icon(Icons.login),trailing: Icon(Icons.arrow_forward_ios),),
-          color: Colors.amber,
+
           ),
         Container(
           child:  ListTile(title: Text("Change password"),leading: Icon(Icons.block_rounded),trailing: Icon(Icons.arrow_forward_ios)),
-          color: Colors.amber,
+
         ),
         Container(
           child:  ListTile(title: Text("Settings"),leading: Icon(Icons.build),trailing: Icon(Icons.arrow_forward_ios)),
-          color: Colors.amber,
+
         ),
         Container(
           child:  ListTile(title: Text("Invite friends"),leading: Icon(Icons.insert_invitation),trailing: Icon(Icons.arrow_forward_ios)),
-          color: Colors.amber,
         ),
+
 
         Container(
           color: Colors.cyan,
           child: Column(
             children: [
-              info("Account Information","View More",0,60),
+              info("Account Information","View More",0,50),
               info("Phone Number","0597735620",5,10),
               info("Email Address","Shoakk2015@gmail.com",5,10),
               info("Date of Birth","20/10/1999",5,23),
