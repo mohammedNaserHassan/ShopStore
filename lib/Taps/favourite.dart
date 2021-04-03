@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:designthree/shopping.dart';
+import 'file:///E:/flutter_projects/designthree/lib/Cards/shopping.dart';
 Widget favouritetab(){
   return Container(
-    color: Colors.cyan,
+    color: Colors.pink,
     child: SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.all(12.0),

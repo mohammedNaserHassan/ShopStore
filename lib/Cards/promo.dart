@@ -21,7 +21,7 @@ Widget promocard(Color color,String title,String promo,String img){
             child: Text("Price $promo off",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w400,fontSize: 26.0),)
         ),
         Positioned(
-            left: 210.0,
+            left: 200.0,
             top: 20,
             width: 180.0,
             height: 180,

@@ -1,17 +1,17 @@
 
-import 'dart:async';
-import 'dart:convert' show json;
-import "package:http/http.dart" as http;
-import 'package:google_sign_in/google_sign_in.dart';
 
-import 'package:designthree/Cards.dart';
-import 'package:designthree/Profile.dart';
+import 'package:designthree/LoginPage.dart';
+import 'package:designthree/Taps/singlee.dart';
+
+import 'package:flutter/services.dart';
+
+import 'file:///E:/flutter_projects/designthree/lib/Taps/Cards.dart';
+import 'file:///E:/flutter_projects/designthree/lib/Taps/Profile.dart';
 import 'package:designthree/Search.dart';
-import 'package:designthree/card.dart';
-import 'package:designthree/favourite.dart';
-import 'package:designthree/promo.dart';
+import 'file:///E:/flutter_projects/designthree/lib/Cards/card.dart';
+import 'file:///E:/flutter_projects/designthree/lib/Taps/favourite.dart';
+import 'file:///E:/flutter_projects/designthree/lib/Cards/promo.dart';
 import 'package:flutter/material.dart';
-import 'package:designthree/singlee.dart';
 import 'package:splashscreen/splashscreen.dart';
 
 void main() {
@@ -45,13 +45,13 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
 
     return SplashScreen(
-      seconds: 3,
-      navigateAfterSeconds: Second(),
-      title: Text("App Store"),
-      image: Image.asset('images/xx.png'),
-      backgroundColor: Colors.white,
+      seconds: 2,
+      navigateAfterSeconds: LoginForm(),
+      title: Text("App Store",style: TextStyle(fontSize: 35.0,fontWeight: FontWeight.bold,color: Colors.yellowAccent),),
+      image: Image.asset('images/xx.png',width: 500.0,height: 400.0,),
+      backgroundColor: Colors.indigoAccent,
       photoSize: 100.0,
-      loaderColor: Colors.indigo,
+      loaderColor: Colors.pink,
     );
   }
 
@@ -62,6 +62,7 @@ class Second extends StatefulWidget {
 }
 
 class _SecondState extends State<Second> {
+
   int _index = 0;
   final List<String> _list = List.generate(10, (index) => "Text $index");
   static List<Widget> _widgetOptions = <Widget>[
@@ -76,7 +77,7 @@ class _SecondState extends State<Second> {
       appBar: AppBar(
         title:  Container(
             child: Text(" Clothes Store",style: TextStyle(color: Colors.white,),)),
-        backgroundColor: Colors.cyan,
+        backgroundColor: Colors.pink,
         actions: [
           IconButton(
             icon: Icon(Icons.search),
@@ -100,16 +101,16 @@ class _SecondState extends State<Second> {
               ,),
             ListTile(title: Text("Profile", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 22), ),leading: Icon(Icons.account_box),),
             Container(child: ListTile(title: Text("Settings"),leading: Icon(Icons.settings)), ),
-            Container(child: ListTile(title: Text("Language"),leading: Icon(Icons.language)), )
-            ,
             Container(child: ListTile(title: Text("Favourite"),leading: Icon(Icons.favorite_border)), )
             ,Container(child: ListTile(leading: Icon(Icons.add_shopping_cart),title: Text("My Cards")),)
             ,Container(child: ListTile(title: Text("Notifications"),leading: Icon(Icons.notifications)),)
             , Container(child: ListTile(title: Text("About Us"),leading: Icon(Icons.assignment_late)),),
             Container(child: ListTile(title: Text("Rate App"),leading: Icon(Icons.star_rate_sharp)), ),
             Container(child: ListTile(title: Text("Help and Support"),leading: Icon(Icons.contact_support)), ),
-            Container(child: ListTile(title: Text("Share App"),leading: Icon(Icons.share)), ),
-            Container(child: ListTile(title: Text("Logout"),leading: Icon(Icons.close),onTap: (){Navigator.of(context).pop();},),),
+            Container(child: ListTile(title: Text("Share App"),leading: Icon(Icons.share),onTap: ()async{
+             
+            },), ),
+            Container(child: ListTile(title: Text("Logout"),leading: Icon(Icons.close),onTap: (){SystemNavigator.pop();},),),
           ],
         ),
 

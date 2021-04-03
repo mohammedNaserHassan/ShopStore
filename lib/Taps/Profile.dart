@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 Widget profiletap(){
   return Container(
-    color: Colors.cyan,
+    color: Colors.pink,
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -11,7 +11,7 @@ Widget profiletap(){
       margin:  EdgeInsets.all(10.0),
       decoration:  BoxDecoration(
           borderRadius:  BorderRadius.all( Radius.circular(10.0)),
-          gradient:  LinearGradient(colors: [Colors.pink[500], Colors.yellow,Colors.cyan],
+          gradient:  LinearGradient(colors: [Colors.cyan[500], Colors.yellow,Colors.cyan],
               begin: Alignment.center, end: Alignment.centerRight, tileMode: TileMode.clamp)),
       child:  Column(
         children: [
@@ -87,7 +87,7 @@ Widget profiletap(){
 
 
         Container(
-          color: Colors.cyan,
+          color: Colors.pink,
           child: Column(
             children: [
               info("Account Information","View More",0,50),
